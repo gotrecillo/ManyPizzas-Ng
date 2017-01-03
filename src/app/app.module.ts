@@ -5,18 +5,25 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
-  declarations: [
+  declarations : [
     AppComponent,
   ],
-  imports: [
+
+  imports : [
     BrowserModule,
     FormsModule,
     HttpModule,
+    AppRoutingModule,
+    HomeModule,
     MaterialModule.forRoot(),
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+
+  providers : [],
+  bootstrap : [ AppComponent ],
 })
-export class AppModule { }
+export class AppModule {
+}
