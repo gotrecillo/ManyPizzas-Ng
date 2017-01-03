@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations : [
@@ -18,8 +18,8 @@ import { HomeModule } from './home/home.module';
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    SharedModule,
     HomeModule,
-    MaterialModule.forRoot(),
   ],
 
   providers : [],
