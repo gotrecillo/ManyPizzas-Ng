@@ -3,12 +3,12 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports : [
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
   ],
 
   exports : [ RouterModule ],
 
-  declarations : []
+  declarations : [],
 })
 export class AppRoutingModule {
 }
