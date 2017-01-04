@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule, MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports : [
     CommonModule,
     MaterialModule.forRoot(),
+    RouterModule,
   ],
 
   declarations : [ NavbarComponent ],
