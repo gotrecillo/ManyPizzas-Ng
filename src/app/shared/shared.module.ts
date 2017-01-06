@@ -4,17 +4,19 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule, MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports : [
     CommonModule,
     MaterialModule.forRoot(),
     RouterModule,
+    FlexLayoutModule.forRoot(),
   ],
 
   declarations : [ NavbarComponent ],
 
-  exports : [ NavbarComponent, MaterialModule ],
+  exports : [ NavbarComponent, MaterialModule, FlexLayoutModule ],
 })
 export class SharedModule {
   constructor(iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {

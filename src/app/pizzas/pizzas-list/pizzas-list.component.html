@@ -1,1 +1,6 @@
-<piz-pizza-item *ngFor="let pizza of pizzas" [pizza]="pizza"></piz-pizza-item>
+<div fxLayout="row"
+     fxLayout.xs="column"
+     fxLayoutAlign="space-around center"
+     fxLayoutAlign.xs="start">
+  <piz-pizza-item fxFlex="200px" *ngFor="let pizza of pizzas" [pizza]="pizza"></piz-pizza-item>
+</div>
