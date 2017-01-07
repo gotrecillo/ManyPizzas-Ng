@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { PizzasModule } from './pizzas/pizzas.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations : [
@@ -22,6 +23,7 @@ import { PizzasModule } from './pizzas/pizzas.module';
     SharedModule,
     HomeModule,
     PizzasModule,
+    AuthModule,
   ],
 
   providers : [],
