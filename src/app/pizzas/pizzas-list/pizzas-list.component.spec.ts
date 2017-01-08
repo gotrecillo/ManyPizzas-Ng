@@ -5,6 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { PizzaslistComponent } from './pizzas-list.component';
 import { PizzaItemComponent } from '../pizza-item/pizza-item.component';
+import { SharedModule } from '../../shared/shared.module';
 
 describe('PizzaslistComponent', () => {
   let component: PizzaslistComponent;
@@ -12,13 +13,14 @@ describe('PizzaslistComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PizzaslistComponent, PizzaItemComponent ],
-    })
-    .compileComponents();
+             imports      : [ SharedModule ],
+             declarations : [ PizzaslistComponent, PizzaItemComponent ],
+           })
+           .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PizzaslistComponent);
+    fixture   = TestBed.createComponent(PizzaslistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
