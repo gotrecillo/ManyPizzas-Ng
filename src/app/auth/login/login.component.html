@@ -1,4 +1,32 @@
-<form [formGroup]="loginForm">
-  Email: <input type="text" formControlName="email">
-  Password: <input type="password" formControlName="password">
-</form>
+<md-card class="login-card">
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <md-card-title>Log into ManyPizzas</md-card-title>
+    <md-card-subtitle>Fill in your email and password</md-card-subtitle>
+    <md-card-content>
+      <div class="form-group" fxLayout="row"
+           fxLayout.xs="column"
+           fxLayoutAlign="space-around center"
+           fxLayoutAlign.xs="start">
+        <md-icon class="form-icon">email</md-icon>
+        <md-input-container fxFlex="100%" [dividerColor]="formErrors['email'] ? 'warn': 'primary' ">
+          <input md-input formControlName="email" id="email" placeholder="Email">
+          <md-hint *ngIf="formErrors['email']" class="warn" align="start">{{ formErrors['email'] }}</md-hint>
+        </md-input-container>
+      </div>
+
+      <div class="form-group" fxLayout="row"
+           fxLayout.xs="column"
+           fxLayoutAlign="space-around center"
+           fxLayoutAlign.xs="start">
+        <md-icon class="form-icon">lock</md-icon>
+        <md-input-container fxFlex="100%">
+          <input md-input formControlName="password" id="password" type="password" placeholder="Password">
+          <md-hint *ngIf="formErrors['password']" class="warn" align="start">{{ formErrors['password'] }}</md-hint>
+        </md-input-container>
+      </div>
+    </md-card-content>
+    <md-card-actions>
+      <button type="submit" md-raised-button color="primary">Log In</button>
+    </md-card-actions>
+  </form>
+</md-card>

@@ -19,6 +19,7 @@
       "mobile": false,
       "styles": [
         "../node_modules/normalize.css/normalize.css",
+        "theme.scss",
         "styles.scss"
       ],
       "scripts": [],
