@@ -1,5 +1,6 @@
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { CustomForm } from '../../shared/form/custom-form';
+import { EmailValidator } from '../../shared/validations/email/email-validators';
 
 export default class LoginForm extends CustomForm {
 
@@ -15,7 +16,7 @@ export default class LoginForm extends CustomForm {
     this.messages = {
       'email'    : {
         'required'  : 'Please enter your email.',
-        'minlength' : 'Email must have at least 5 characters.',
+        'email' : 'Email must be a valid email.',
       },
       'password' : {
         'required' : 'Please enter your password.',
@@ -35,7 +36,7 @@ export default class LoginForm extends CustomForm {
     const form = this.fb.group({
       'email'    : [ '', [
         Validators.required,
-        Validators.minLength(5),
+        EmailValidator.normal(),
       ] ],
       'password' : [ '', [
         Validators.required,
