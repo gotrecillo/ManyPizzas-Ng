@@ -21,4 +21,8 @@ export class AuthenticationService {
   logout() {
     localStorage.removeItem('currentUser');
   }
+
+  checkEmail(email: string): Observable<any> {
+    return this.http.post('http://api.localhost:8000/auth/check-email', { email });
+  }
 }

@@ -2,9 +2,12 @@ import { AbstractControl } from '@angular/forms';
 import { Injectable } from '@angular/core';
 
 import { Util } from '../util';
+import { AuthenticationService } from '../../../auth/_services/authentication.service';
 
 @Injectable()
 export class EmailValidator {
+  private emailTimeout;
+
   static simple() {
     return function validate(control: AbstractControl): { [key: string]: any } {
       if (Util.isNotPresent(control)) {
@@ -29,6 +32,25 @@ export class EmailValidator {
       // tslint:enable:max-line-length
 
       return regex.test(control.value) ? null : { 'email' : true };
+    };
+  }
+
+  constructor(private authenticationService: AuthenticationService) {}
+
+  unique() {
+    return function validate(control: AbstractControl) {
+      clearTimeout(this.emailTimeout);
+
+      return new Promise<any>(resolve => {
+        this.emailTimeout = setTimeout(() => {
+          this.authenticationService
+              .checkEmail(control.value)
+              .subscribe(
+                () => { resolve(null); },
+                () => { resolve({ unique : true }); },
+              );
+        }, 600);
+      });
     };
   }
 }
