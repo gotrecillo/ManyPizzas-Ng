@@ -5,7 +5,7 @@ import { MaterialModule, MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { EmailValidator } from './validations/email/email-validators';
+import { EmailValidator } from './validations/email/email-validator';
 
 @NgModule({
     imports : [

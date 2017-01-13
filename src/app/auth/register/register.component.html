@@ -1,0 +1,58 @@
+<md-card class="register-card">
+  <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+
+    <md-card-title>Registrate en la aplicacion</md-card-title>
+
+    <md-card-subtitle>Rellena los datos para crear tu cuenta</md-card-subtitle>
+
+    <md-card-content>
+
+      <div class="form-group" layout="row" layout-margin>
+        <md-icon class="form-icon" flex>account_circle</md-icon>
+        <md-input-container flex="100">
+          <input md-input formControlName="name" id="name" placeholder="Nombre">
+          <md-hint *ngIf="formErrors['name']" class="warn" align="start">{{ formErrors['name'] }}</md-hint>
+        </md-input-container>
+      </div>
+
+      <div class="form-group" layout="row" layout-margin>
+        <md-icon class="form-icon" flex>email</md-icon>
+        <md-input-container flex="100">
+          <input md-input formControlName="email" id="email" placeholder="Email">
+          <md-hint *ngIf="email.pending" align="end">
+            <md-progress-spinner color="primary" class="email-spinner" mode="indeterminate"></md-progress-spinner>
+          </md-hint>
+          <md-hint *ngIf="email.hasError('unique') && !formErrors['email']" class="warn" align="start">
+            {{form.messages.email.unique}}
+          </md-hint>
+          <md-hint *ngIf="formErrors['email']" class="warn" align="start">{{ formErrors['email'] }}</md-hint>
+        </md-input-container>
+      </div>
+
+      <div class="form-group" layout="row" layout-margin>
+        <md-icon class="form-icon" flex>lock</md-icon>
+        <md-input-container flex="100">
+          <input md-input formControlName="password" id="password" type="password" placeholder="Contraseña">
+          <md-hint *ngIf="formErrors['password']" class="warn" align="start">{{ formErrors['password'] }}</md-hint>
+        </md-input-container>
+      </div>
+
+      <div class="form-group" layout="row" layout-margin>
+        <md-icon class="form-icon" flex>lock</md-icon>
+        <md-input-container flex="100">
+          <input md-input formControlName="password_confirmation" id="password_confirmation" type="password"
+                 placeholder="Repite la contraseña">
+          <md-hint *ngIf="formErrors['password_confirmation']" class="warn" align="start">
+            {{ formErrors['password_confirmation'] }}
+          </md-hint>
+        </md-input-container>
+      </div>
+
+    </md-card-content>
+
+    <md-card-actions>
+      <button class="register-button" type="submit" md-raised-button color="primary">Registrarse</button>
+    </md-card-actions>
+
+  </form>
+</md-card>

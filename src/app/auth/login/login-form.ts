@@ -1,6 +1,6 @@
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { CustomForm } from '../../shared/form/custom-form';
-import { EmailValidator } from '../../shared/validations/email/email-validators';
+import { EmailValidator } from '../../shared/validations/email/email-validator';
 
 export default class LoginForm extends CustomForm {
 

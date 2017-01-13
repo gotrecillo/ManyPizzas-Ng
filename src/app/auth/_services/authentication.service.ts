@@ -25,4 +25,8 @@ export class AuthenticationService {
   checkEmail(email: string): Observable<any> {
     return this.http.post('http://api.localhost:8000/auth/check-email', { email });
   }
+
+  register(name: any, email: any, password: any, passwordConfirmation: any) {
+    // TODO implement this
+  }
 }

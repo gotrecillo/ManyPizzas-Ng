@@ -1,0 +1,20 @@
+.register-card {
+  max-width: 600px;
+  min-height: 400px;
+  padding: 2em;
+  margin: 2em auto;
+
+  .form-group {
+    .form-icon {
+      line-height: 2em;
+    }
+
+    .email-spinner {
+      height: 1em;
+      width: 1em;
+    }
+  }
+
+  .register-button {
+  }
+}

@@ -1,5 +1,5 @@
 import { FormControl } from '@angular/forms';
-import { EmailValidator } from './email-validators';
+import { EmailValidator } from './email-validator';
 
 describe('Email validators service', () => {
   describe('simpleRule', () => {
